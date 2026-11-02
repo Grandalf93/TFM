@@ -8,6 +8,7 @@ log/
 build_isolated/
 devel_isolated/
 logs/
+test/
 
 # ====================================================================
 # Python cache and temporary files

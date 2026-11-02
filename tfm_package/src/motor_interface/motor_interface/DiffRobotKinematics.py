@@ -19,8 +19,8 @@ class DiffRobot(Node):
         self.declare_parameter('wheel_radius', 0.033)     # meters
         self.declare_parameter('wheelbase', 0.160)        # meters
         self.declare_parameter('rads_to_dxl_unit', 41.7)  # scaling factor
-        self.declare_parameter('left_wheel_id', 40)       # ID for left Dynamixel
-        self.declare_parameter('right_wheel_id', 41)       # ID for right Dynamixel
+        self.declare_parameter('left_wheel_id', 1)       # ID for left Dynamixel
+        self.declare_parameter('right_wheel_id', 2)       # ID for right Dynamixel
         
         # Create Subscriber for /cmd_vel
         self.subscription = self.create_subscription(
@@ -62,8 +62,8 @@ class DiffRobot(Node):
         dxl_val_left = int(omega_left * rads_to_dxl_unit)
         dxl_val_right = int(omega_right * rads_to_dxl_unit)
         
-        # 4. Handle flipped direction of the right motor on the chassis
-        dxl_val_right = -dxl_val_right 
+        # # 4. Handle flipped direction of the right motor on the chassis
+        dxl_val_right = -dxl_val_right
 
         # Create message for Left Motor (ID and Speed)
         left_msg = WheelSpeed()

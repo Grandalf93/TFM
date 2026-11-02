@@ -22,8 +22,8 @@ class MotorDriverVel(Node):
         # Parameters (use "/dev/ttyUSB0" on Linux or "COM3" on Windows)
         self.declare_parameter('device_name', '/dev/ttyUSB0')
         self.declare_parameter('baudrate', 1000000)
-        self.declare_parameter('dxl_id_1', 40)
-        self.declare_parameter('dxl_id_2', 41)
+        self.declare_parameter('dxl_id_1', 1)
+        self.declare_parameter('dxl_id_2', 2)
 
         device_name = self.get_parameter('device_name').value
         baudrate = self.get_parameter('baudrate').value
